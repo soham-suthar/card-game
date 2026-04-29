@@ -1,0 +1,560 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> Memory_1
+            </title>
+            <style>
+                body {
+                align-items: center;
+                background-image: url('public/bg.jpg');
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+                }
+
+                .game_1, .game_2, .game_3 {
+                    display: none;
+                    grid-template-columns: repeat(7, 1fr);
+                    justify-content: center;
+                    padding: 3vh;
+                    color: white;
+                    align-items: center;
+                }
+
+                .card {
+                    perspective: 1000px;
+                    border-radius: 1vh;
+                    cursor: pointer;
+                    height: 17vh;
+                    width: 12vh;
+                    margin: 2vh;
+                }
+
+                .inner {
+                    position: relative;
+                    transform-style: preserve-3d;
+                    transition: transform 0.6s;
+                    height: 100%;
+                    width: 100%;
+                }
+                .card.flip .inner {
+                    transform: rotateY(180deg);
+                }
+
+                .front, .back {
+                    position: absolute;
+                    height: 100%;
+                    width: 100%;
+                    backface-visibility: hidden;
+                    border-radius: 1vh;
+                    display: flex;
+                    border-radius: 1vh;
+                }
+                .back {
+                    transform: rotateY(180deg);
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                }
+                img {
+                    position: absolute;
+                    height: 17vh;
+                    width: 12vh;
+                    border-radius: 1vh;
+                }
+
+                .Extra {
+                    grid-template-columns: repeat(3, 1fr);
+                    color: white;
+                    text-align: center;
+                    justify-content: center;
+                    align-items: center;
+                    display: none;
+                }
+
+                #end, #Start {
+                    display: none;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    text-align: center;
+                    justify-content: center;
+                    align-items: center;
+                    background-color: white;
+                    background-size:cover;
+                    z-index: 1000;
+                    position: fixed;
+                    width: 100%;
+                }
+
+                #Start {
+                    display: block;
+                    background-color: rgb(222, 168, 168);
+                }
+                button {
+                    text-align: center;
+                    justify-content: center;
+                    border-radius: 3vh; 
+                }
+
+                #Start button {
+                    width: 20vh;
+                    height: 5vh;
+                }
+            </style>
+            </head>
+    <body>
+
+        <div id="Start">
+            <h1> Memory Game </h1>
+            <br> <h2> Select a difficulty level to start the game! </h2>
+            <br>
+            <button onclick="Easy()" style="background-color: greenyellow;"> Easy </button> <br> <br>
+            <button onclick="Medium()" style="background-color: yellow;"> Medium </button> <br> <br>
+            <button onclick="Hard()" style="background-color: red;"> Hard </button>
+            <p></p>
+            </div>
+
+
+        
+        <div class="Extra">
+            <div class="Score"> 
+            <h1> <span id="score">Score: 0</span> </h1>
+            </div>
+            <div class="Time"> 
+            <h1> <span id="Time">Time: 0</span> </h1>
+            </div>
+            <div class="Moves">
+                <h1> <span id="moves">Moves: 0</span> </h1>
+                </div>
+            </div>
+
+
+
+        
+        <div class="Easy">  
+              <div class="game_1">
+            
+            
+        <div class="card">
+                <div class="inner"> 
+                    <div class="front"><img src="public/backface.png">  </div>
+                     <div class="back"> </div> 
+                    </div>
+                </div>
+
+
+
+                <div class="card">
+                <div class="inner"> 
+                    <div class="front"><img src="public/backface.png">  </div>
+                     <div class="back"> </div> 
+                    </div>
+                </div>
+                <div class="card">
+                <div class="inner"> 
+                    <div class="front"><img src="public/backface.png">  </div>
+                     <div class="back"></div> 
+                    </div>
+                </div>
+                <div class="card">
+                <div class="inner"> 
+                    <div class="front"><img src="public/backface.png">  </div>
+                     <div class="back"> </div> 
+                    </div>
+                </div>
+                <div class="card">
+                <div class="inner"> 
+                    <div class="front"><img src="public/backface.png">  </div>
+                     <div class="back"> </div> 
+                    </div>
+                </div>
+                <div class="card">
+                <div class="inner"> 
+                    <div class="front"> <img src="public/backface.png"> </div>
+                     <div class="back"> </div> 
+                    </div>
+                </div>
+                <div class="card">
+                <div class="inner"> 
+                    <div class="front"><img src="public/backface.png">  </div>
+                     <div class="back"> </div> 
+                    </div>
+                </div>
+                <div class="card">
+                <div class="inner"> 
+                    <div class="front"><img src="public/backface.png">  </div>
+                     <div class="back"> </div> 
+                    </div>
+                </div>
+                <div class="card">
+                <div class="inner"> 
+                    <div class="front"><img src="public/backface.png">  </div>
+                     <div class="back"> </div> 
+                    </div>
+                </div>
+                <div class="card">
+                <div class="inner"> 
+                    <div class="front"><img src="public/backface.png">  </div>
+                     <div class="back"> </div> 
+                    </div>
+                </div>
+                <div class="card">
+                <div class="inner"> 
+                    <div class="front"><img src="public/backface.png">  </div>
+                     <div class="back"> </div> 
+                    </div>
+                </div>
+                <div class="card">
+                <div class="inner"> 
+                    <div class="front"><img src="public/backface.png">  </div>
+                     <div class="back"> </div> 
+                    </div>
+                </div>
+                <div class="card">
+                <div class="inner"> 
+                    <div class="front"><img src="public/backface.png">  </div>
+                     <div class="back"> </div> 
+                    </div>
+                </div>
+                <div class="card">
+                <div class="inner"> 
+                    <div class="front"><img src="public/backface.png">  </div>
+                     <div class="back"> </div> 
+                    </div>
+                </div>
+        </div>
+        </div>
+
+
+
+
+        <div class="Medium">
+            <div class="game_2">
+            
+            
+        <div class="card">
+                <div class="inner"> 
+                    <div class="front"><img src="public/backface.png">  </div>
+                     <div class="back"> </div> 
+                    </div>
+                </div>
+
+
+
+                <div class="card">
+                <div class="inner"> 
+                    <div class="front"><img src="public/backface.png">  </div>
+                     <div class="back"> </div> 
+                    </div>
+                </div>
+                <div class="card">
+                <div class="inner"> 
+                    <div class="front"><img src="public/backface.png">  </div>
+                     <div class="back"></div> 
+                    </div>
+                </div>
+                <div class="card">
+                <div class="inner"> 
+                    <div class="front"><img src="public/backface.png">  </div>
+                     <div class="back"> </div> 
+                    </div>
+                </div>
+                <div class="card">
+                <div class="inner"> 
+                    <div class="front"><img src="public/backface.png">  </div>
+                     <div class="back"> </div> 
+                    </div>
+                </div>
+                <div class="card">
+                <div class="inner"> 
+                    <div class="front"> <img src="public/backface.png"> </div>
+                     <div class="back"> </div> 
+                    </div>
+                </div>
+                <div class="card">
+                <div class="inner"> 
+                    <div class="front"><img src="public/backface.png">  </div>
+                     <div class="back"> </div> 
+                    </div>
+                </div>
+                <div class="card">
+                <div class="inner"> 
+                    <div class="front"><img src="public/backface.png">  </div>
+                     <div class="back"> </div> 
+                    </div>
+                </div>
+                <div class="card">
+                <div class="inner"> 
+                    <div class="front"><img src="public/backface.png">  </div>
+                     <div class="back"> </div> 
+                    </div>
+                </div>
+                <div class="card">
+                <div class="inner"> 
+                    <div class="front"><img src="public/backface.png">  </div>
+                     <div class="back"> </div> 
+                    </div>
+                </div>
+                <div class="card">
+                <div class="inner"> 
+                    <div class="front"><img src="public/backface.png">  </div>
+                     <div class="back"> </div> 
+                    </div>
+                </div>
+                <div class="card">
+                <div class="inner"> 
+                    <div class="front"><img src="public/backface.png">  </div>
+                     <div class="back"> </div> 
+                    </div>
+                </div>
+                <div class="card">
+                <div class="inner"> 
+                    <div class="front"><img src="public/backface.png">  </div>
+                     <div class="back"> </div> 
+                    </div>
+                </div>
+                <div class="card">
+                <div class="inner"> 
+                    <div class="front"><img src="public/backface.png">  </div>
+                     <div class="back"> </div> 
+                    </div>
+                </div>
+            
+            
+        <div class="card">
+                <div class="inner"> 
+                    <div class="front"><img src="public/backface.png">  </div>
+                     <div class="back"> </div> 
+                    </div>
+                </div>
+
+
+
+                <div class="card">
+                <div class="inner"> 
+                    <div class="front"><img src="public/backface.png">  </div>
+                     <div class="back"> </div> 
+                    </div>
+                </div>
+                <div class="card">
+                <div class="inner"> 
+                    <div class="front"><img src="public/backface.png">  </div>
+                     <div class="back"></div> 
+                    </div>
+                </div>
+                <div class="card">
+                <div class="inner"> 
+                    <div class="front"><img src="public/backface.png">  </div>
+                     <div class="back"> </div> 
+                    </div>
+                </div>
+                <div class="card">
+                <div class="inner"> 
+                    <div class="front"> <img src="public/backface.png"> </div>
+                     <div class="back"> </div> 
+                    </div>
+                </div>
+                <div class="card">
+                <div class="inner"> 
+                    <div class="front"><img src="public/backface.png">  </div>
+                     <div class="back"> </div> 
+                    </div>
+                </div>
+                </div>
+                </div>
+
+
+                <div class="Hard">
+                    
+                <div class="game_3">
+
+                <div class="card">
+                <div class="inner"> 
+                    <div class="front"><img src="public/backface.png">  </div>
+                     <div class="back"> </div> 
+                    </div>
+                </div>
+                <div class="card">
+                <div class="inner"> 
+                    <div class="front"><img src="public/backface.png">  </div>
+                     <div class="back"> </div> 
+                    </div>
+                </div>
+                <div class="card">
+                <div class="inner"> 
+                    <div class="front"><img src="public/backface.png">  </div>
+                     <div class="back"> </div> 
+                    </div>
+                </div>
+                <div class="card">
+                <div class="inner"> 
+                    <div class="front"><img src="public/backface.png">  </div>
+                     <div class="back"> </div> 
+                    </div>
+                </div>
+                <div class="card">
+                <div class="inner"> 
+                    <div class="front"><img src="public/backface.png">  </div>
+                     <div class="back"> </div> 
+                    </div>
+                </div>
+                <div class="card">
+                <div class="inner"> 
+                    <div class="front"><img src="public/backface.png">  </div>
+                     <div class="back"> </div> 
+                    </div>
+                </div>
+                <div class="card">
+                <div class="inner"> 
+                    <div class="front"><img src="public/backface.png">  </div>
+                     <div class="back"> </div> 
+                    </div>
+                </div>
+                <div class="card">
+                <div class="inner"> 
+                    <div class="front"><img src="public/backface.png">  </div>
+                     <div class="back"> </div> 
+                    </div>
+                </div>
+                <div class="card">
+                <div class="inner"> 
+                    <div class="front"><img src="public/backface.png">  </div>
+                     <div class="back"> </div> 
+                    </div>
+                </div>
+                <div class="card">
+                <div class="inner"> 
+                    <div class="front"><img src="public/backface.png">  </div>
+                     <div class="back"> </div> 
+                    </div>
+                </div>
+                <div class="card">
+                <div class="inner"> 
+                    <div class="front"><img src="public/backface.png">  </div>
+                     <div class="back"> </div> 
+                    </div>
+                </div>
+                <div class="card">
+                <div class="inner"> 
+                    <div class="front"><img src="public/backface.png">  </div>
+                     <div class="back"> </div> 
+                    </div>
+                </div>
+                <div class="card">
+                <div class="inner"> 
+                    <div class="front"><img src="public/backface.png">  </div>
+                     <div class="back"> </div> 
+                    </div>
+                </div>
+                <div class="card">
+                <div class="inner"> 
+                    <div class="front"><img src="public/backface.png">  </div>
+                     <div class="back"> </div> 
+                    </div>
+                </div>
+            
+            
+        <div class="card">
+                <div class="inner"> 
+                    <div class="front"><img src="public/backface.png">  </div>
+                     <div class="back"> </div> 
+                    </div>
+                </div>
+
+
+
+                <div class="card">
+                <div class="inner"> 
+                    <div class="front"><img src="public/backface.png">  </div>
+                     <div class="back"> </div> 
+                    </div>
+                </div>
+                <div class="card">
+                <div class="inner"> 
+                    <div class="front"><img src="public/backface.png">  </div>
+                     <div class="back"></div> 
+                    </div>
+                </div>
+                <div class="card">
+                <div class="inner"> 
+                    <div class="front"><img src="public/backface.png">  </div>
+                     <div class="back"> </div> 
+                    </div>
+                </div>
+                <div class="card">
+                <div class="inner"> 
+                    <div class="front"><img src="public/backface.png">  </div>
+                     <div class="back"> </div> 
+                    </div>
+                </div>
+                <div class="card">
+                <div class="inner"> 
+                    <div class="front"> <img src="public/backface.png"> </div>
+                     <div class="back"> </div> 
+                    </div>
+                </div>
+                <div class="card">
+                <div class="inner"> 
+                    <div class="front"><img src="public/backface.png">  </div>
+                     <div class="back"> </div> 
+                    </div>
+                </div>
+                <div class="card">
+                <div class="inner"> 
+                    <div class="front"><img src="public/backface.png">  </div>
+                     <div class="back"> </div> 
+                    </div>
+                </div>
+                <div class="card">
+                <div class="inner"> 
+                    <div class="front"><img src="public/backface.png">  </div>
+                     <div class="back"> </div> 
+                    </div>
+                </div>
+                <div class="card">
+                <div class="inner"> 
+                    <div class="front"><img src="public/backface.png">  </div>
+                     <div class="back"> </div> 
+                    </div>
+                </div>
+                <div class="card">
+                <div class="inner"> 
+                    <div class="front"><img src="public/backface.png">  </div>
+                     <div class="back"> </div> 
+                    </div>
+                </div>
+                <div class="card">
+                <div class="inner"> 
+                    <div class="front"><img src="public/backface.png">  </div>
+                     <div class="back"> </div> 
+                    </div>
+                </div>
+                <div class="card">
+                <div class="inner"> 
+                    <div class="front"><img src="public/backface.png">  </div>
+                     <div class="back"> </div> 
+                    </div>
+                </div>
+                <div class="card">
+                <div class="inner"> 
+                    <div class="front"><img src="public/backface.png">  </div>
+                     <div class="back"> </div> 
+                    </div>
+                </div> 
+        </div>
+
+
+        <div id="end"> 
+
+            <h1> Congratulations! You have completed the game in <span id="finalMoves"></span> moves in <span id="finalTime"></span> seconds. </h1>
+            <button onclick="Close()">Play Again</button>
+            <br>
+            <p></p>
+            <br>
+             </div>
+        <script src="main.js"></script>
+
+    </body>
+</html>
