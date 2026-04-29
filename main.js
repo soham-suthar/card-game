@@ -1,5 +1,3 @@
-
-
 document.getElementById("easybtn").addEventListener("click", Easy);
 document.getElementById("mediumbtn").addEventListener("click", Medium);
 document.getElementById("hardbtn").addEventListener("click", Hard);
