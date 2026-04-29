@@ -40,6 +40,10 @@
             transform: rotateY(180deg);
         }
 
+        .card:hover {
+            transform: scale(1.05);
+        }
+
         .front,
         .back {
             position: absolute;
