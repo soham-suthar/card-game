@@ -142,6 +142,10 @@
                 grid-template-columns: repeat(4, 1fr);
             }
 
+            .game_1 .card:nth-child(13) {
+                grid-column: 1;
+            }
+
             .card {
                 height: 10vh;
                 width: 6vh;
