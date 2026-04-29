@@ -18,9 +18,6 @@
             align-items: center;
         }
 
-        .game_2 .card:nth-child(17) {
-            grid-column: 2;
-        }
 
         .card {
             perspective: 1000px;
@@ -115,6 +112,14 @@
             .game_2,
             .game_3 {
                 grid-template-columns: repeat(6, 1fr);
+            }
+
+            .game_1 .card:nth-child(13) {
+                grid-column: 2;
+            }
+
+            .game_3 .card:nth-child(31) {
+                grid-column: 3;
             }
 
             .card {

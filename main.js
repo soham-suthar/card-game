@@ -181,7 +181,9 @@ const images = [
     {id: '10', src: "public/9C.png"},
     {id: '10', src: "public/9S.png"},
     {id: '11', src: "public/10D.png"},
-    {id: '11', src: "public/10H.png"}
+    {id: '11', src: "public/10H.png"},
+    {id: '12', src: "public/QH.png"},
+    {id: '12', src: "public/QD.png"}
 ];
 
 TotalPairs = images.length / 2;
