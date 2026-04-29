@@ -12,7 +12,7 @@ function updatescore() {
 let time = 0;
 function Timer() {
     time++;
-    document.getElementById("Time").innerHTML = "Time: " + time + "";
+    document.getElementById("Time").innerHTML = "Time: " + time + " ";
 }
 
 let moves = 0;
@@ -98,7 +98,7 @@ function Easy() {
     document.querySelector(".game_2").style.display = "none";
     document.querySelector(".game_3").style.display = "none";
     document.getElementById("Start").style.display = "none";
-    document.getElementsByClassName("Extra")[0].style.display = "block";
+    document.getElementsByClassName("Extra")[0].style.display = "grid";
 
 document.querySelectorAll(".game_1 .card").forEach(card => {
     card.onclick = handleCardClick;
@@ -119,7 +119,9 @@ const images = [
     {id: '6', src: "public/AD.jpg"},
     {id: '6', src: "public/AH.jpg"},
     {id: '7', src: "public/QH.png"},
-    {id: '7', src: "public/QD.png"}
+    {id: '7', src: "public/QD.png"},
+    {id: '8', src: "public/KC.png"},
+    {id: '8', src: "public/KS.png"}
 ];
 
 TotalPairs = images.length / 2;
@@ -151,7 +153,7 @@ function Medium() {
     document.querySelector(".game_2").style.display = "grid";
     document.querySelector(".game_3").style.display = "none";
     document.getElementById("Start").style.display = "none";
-    document.getElementsByClassName("Extra")[0].style.display = "block";
+    document.getElementsByClassName("Extra")[0].style.display = "grid";
     document.querySelectorAll(".game_2 .card").forEach(card => {
     card.onclick = handleCardClick;
 });
