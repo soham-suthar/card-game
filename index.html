@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8"  >
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> test
+    <title> Card Memory Game
     </title>
     <style>
         body {
@@ -106,6 +106,7 @@
             text-align: center;
             justify-content: center;
             border-radius: 3vh;
+            cursor: pointer;
         }
 
         #Start button {
@@ -122,9 +123,9 @@
         <br>
         <h2> Select a difficulty level to start the game! </h2>
         <br>
-        <button onclick="Easy()" style="background-color: greenyellow;"> Easy </button> <br> <br>
-        <button onclick="Medium()" style="background-color: yellow;"> Medium </button> <br> <br>
-        <button onclick="Hard()" style="background-color: red;"> Hard </button>
+        <button id="easybtn" style="background-color: greenyellow;"> Easy </button> <br> <br>
+        <button id="mediumbtn" onclick="Medium()" style="background-color: yellow;"> Medium </button> <br> <br>
+        <button id="hardbtn" onclick="Hard()" style="background-color: red;"> Hard </button>
         <p></p>
     </div>
 
@@ -562,7 +563,7 @@
 
             <h1> Congratulations! You have completed the game in <span id="finalMoves"></span> moves in <span
                     id="finalTime"></span> seconds. </h1>
-            <button onclick="Close()">Play Again</button>
+            <button id="Close">Play Again</button>
             <br>
             <p></p>
             <br>

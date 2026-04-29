@@ -1,3 +1,10 @@
+
+
+document.getElementById("easybtn").addEventListener("click", Easy);
+document.getElementById("mediumbtn").addEventListener("click", Medium);
+document.getElementById("hardbtn").addEventListener("click", Hard);
+document.getElementById("Close").addEventListener("click", Close);
+
 let Score = 0;
 function updatescore() {
     Score++;
@@ -106,7 +113,7 @@ const images = [
     {id: '2', src: "public/5H.png"},
     {id: '2', src: "public/5D.png"},
     {id: '3', src: "public/8H.jpg"},
-    {id: '3', src: "public/8D.png"},
+    {id: '3', src: "public/8D.jpg"},
     {id: '4', src: "public/9C.png"},
     {id: '4', src: "public/9S.png"},
     {id: '5', src: "public/AC.jpg"},
@@ -117,7 +124,7 @@ const images = [
     {id: '7', src: "public/QD.png"}
 ];
 
-TotalPairs = images.length;
+TotalPairs = images.length / 2;
 
 const double = [...images];
 
@@ -153,13 +160,13 @@ function Medium() {
 
 
 const images = [
-    {id: '1', src: "public/2H.jpg"},
+    {id: '1', src: "public/2H.png"},
     {id: '1', src: "public/2D.png"},
-    {id: '2', src: "public/5H.jpg"},
+    {id: '2', src: "public/5H.png"},
     {id: '2', src: "public/5D.png"},
     {id: '3', src: "public/8H.jpg"},
-    {id: '3', src: "public/8D.png"},
-    {id: '4', src: "public/9C.jpg"},
+    {id: '3', src: "public/8D.jpg"},
+    {id: '4', src: "public/9C.png"},
     {id: '4', src: "public/9S.png"},
     {id: '5', src: "public/AC.jpg"},
     {id: '5', src: "public/AS.png"},
@@ -175,9 +182,9 @@ const images = [
     {id: '10', src: "public/AS.png"}
 ];
 
-TotalPairs = images.length;
+TotalPairs = images.length / 2;
 
-const double = [...images, ...images];
+const double = [...images];
 
 const shuffle = double.sort(() =>
     Math.random() - 0.5
@@ -214,13 +221,13 @@ function Hard() {
 
 
 const images = [
-    {id: '1', src: "public/2H.jpg"},
+    {id: '1', src: "public/2H.png"},
     {id: '1', src: "public/2D.png"},
-    {id: '2', src: "public/5H.jpg"},
+    {id: '2', src: "public/5H.png"},
     {id: '2', src: "public/5D.png"},
     {id: '3', src: "public/8H.jpg"},
-    {id: '3', src: "public/8D.png"},
-    {id: '4', src: "public/9C.jpg"},
+    {id: '3', src: "public/8D.jpg"},
+    {id: '4', src: "public/9C.png"},
     {id: '4', src: "public/9S.png"},
     {id: '5', src: "public/AC.jpg"},
     {id: '5', src: "public/AS.png"},
@@ -244,9 +251,9 @@ const images = [
     {id: '14', src: "public/4S.png"}
     ];
 
-TotalPairs = images.length;
+TotalPairs = images.length / 2;
 
-const double = [...images, ...images];
+const double = [...images];
 
 const shuffle = double.sort(() =>
     Math.random() - 0.5
