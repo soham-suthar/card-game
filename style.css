@@ -18,6 +18,10 @@
             align-items: center;
         }
 
+        .game_2 .card:nth-child(17) {
+            grid-column: 2;
+        }
+
         .card {
             perspective: 1000px;
             border-radius: 1vh;
