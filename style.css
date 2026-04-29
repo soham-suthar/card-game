@@ -1,9 +1,10 @@
-body {
+        body {
             align-items: center;
             background-image: url('public/bg.jpg');
             display: flex;
             justify-content: center;
             flex-direction: column;
+            height: 100vh;
         }
 
         .game_1,
@@ -105,3 +106,22 @@ body {
             height: 5vh;
         }
 
+        @media screen and (max-width: 600px) {
+            .game_1,
+            .game_2,
+            .game_3 {
+                grid-template-columns: repeat(4, 1fr);
+            }
+
+            .card {
+                height: 12vh;
+                width: 8vh;
+                margin: 1vh;
+            }
+
+            img {
+                height: 12vh;
+                width: 8vh;
+            }
+            
+        }
