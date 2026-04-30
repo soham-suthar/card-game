@@ -12,7 +12,7 @@ function updatescore() {
 let time = 0;
 function Timer() {
     time++;
-    document.getElementById("Time").innerHTML = "Time: " + time + "";
+    document.getElementById("Time").innerHTML = "Time: " + time + " ";
 }
 
 let moves = 0;
@@ -250,7 +250,7 @@ const images = [
     {id: '15', src: "public/AD.jpg"},
     {id: '16', src: "public/AC.jpg"},
     {id: '16', src: "public/AS.png"}
-    ];
+];
 
 TotalPairs = images.length / 2;
 
