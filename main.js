@@ -1,5 +1,3 @@
-
-
 document.getElementById("easybtn").addEventListener("click", Easy);
 document.getElementById("mediumbtn").addEventListener("click", Medium);
 document.getElementById("hardbtn").addEventListener("click", Hard);
@@ -40,6 +38,7 @@ function resetGame() {
 });
 }
 
+const hud = document.querySelector(".hud");
 
 let TotalPairs = 0;
 
@@ -52,7 +51,8 @@ function handleCardClick(e) {
 
     const card = e.currentTarget;
     if (lockboard) return;
-        if(card.classList.contains("flip"))return;
+        if(card.classList.contains("flip"))
+            return;
 
         card.classList.add("flip");
         flippedCard.push(card);
@@ -89,6 +89,10 @@ function handleCardClick(e) {
         }
     }
 
+    document.querySelectorAll(".card").forEach(card => {
+    card.addEventListener("click", handleCardClick);
+});
+
     let timerInterval;
 
 function Easy() {
@@ -100,28 +104,25 @@ function Easy() {
     document.querySelector(".game_2").style.display = "none";
     document.querySelector(".game_3").style.display = "none";
     document.getElementById("Start").style.display = "none";
-    document.getElementsByClassName("Extra")[0].style.display = "block";
-
-document.querySelectorAll(".game_1 .card").forEach(card => {
-    card.onclick = handleCardClick;
-});
-
+    hud.style.display = "flex";
 
 const images = [
     {id: '1', src: "public/2H.png"},
     {id: '1', src: "public/2D.png"},
-    {id: '2', src: "public/5H.png"},
-    {id: '2', src: "public/5D.png"},
-    {id: '3', src: "public/8H.jpg"},
-    {id: '3', src: "public/8D.jpg"},
-    {id: '4', src: "public/9C.png"},
-    {id: '4', src: "public/9S.png"},
-    {id: '5', src: "public/AC.jpg"},
-    {id: '5', src: "public/AS.png"},
-    {id: '6', src: "public/AD.jpg"},
-    {id: '6', src: "public/AH.jpg"},
-    {id: '7', src: "public/QH.png"},
-    {id: '7', src: "public/QD.png"}
+    {id: '2', src: "public/3C.png"},
+    {id: '2', src: "public/3S.png"},
+    {id: '3', src: "public/3H.png"},
+    {id: '3', src: "public/3D.png"},
+    {id: '4', src: "public/4H.png"},
+    {id: '4', src: "public/4D.png"},
+    {id: '5', src: "public/4C.png"},
+    {id: '5', src: "public/4S.png"},
+    {id: '6', src: "public/5H.png"},
+    {id: '6', src: "public/5D.png"},
+    {id: '7', src: "public/6C.png"},
+    {id: '7', src: "public/6S.png"},
+    {id: '8', src: "public/7H.png"},
+    {id: '8', src: "public/7D.jpg"}
 ];
 
 TotalPairs = images.length / 2;
@@ -153,33 +154,33 @@ function Medium() {
     document.querySelector(".game_2").style.display = "grid";
     document.querySelector(".game_3").style.display = "none";
     document.getElementById("Start").style.display = "none";
-    document.getElementsByClassName("Extra")[0].style.display = "block";
-    document.querySelectorAll(".game_2 .card").forEach(card => {
-    card.onclick = handleCardClick;
-});
-
+    hud.style.display = "flex";
 
 const images = [
     {id: '1', src: "public/2H.png"},
     {id: '1', src: "public/2D.png"},
-    {id: '2', src: "public/5H.png"},
-    {id: '2', src: "public/5D.png"},
-    {id: '3', src: "public/8H.jpg"},
-    {id: '3', src: "public/8D.jpg"},
-    {id: '4', src: "public/9C.png"},
-    {id: '4', src: "public/9S.png"},
-    {id: '5', src: "public/AC.jpg"},
-    {id: '5', src: "public/AS.png"},
-    {id: '6', src: "public/AD.jpg"},
-    {id: '6', src: "public/AH.jpg"},
-    {id: '7', src: "public/QH.png"},
-    {id: '7', src: "public/QD.png"},
-    {id: '8', src: "public/KC.png"},
-    {id: '8', src: "public/KS.png"},
-    {id: '9', src: "public/KD.png"},
-    {id: '9', src: "public/KH.jpg"},
-    {id: '10', src: "public/AH.jpg"},
-    {id: '10', src: "public/AS.png"}
+    {id: '2', src: "public/3C.png"},
+    {id: '2', src: "public/3S.png"},
+    {id: '3', src: "public/3H.png"},
+    {id: '3', src: "public/3D.png"},
+    {id: '4', src: "public/4H.png"},
+    {id: '4', src: "public/4D.png"},
+    {id: '5', src: "public/4C.png"},
+    {id: '5', src: "public/4S.png"},
+    {id: '6', src: "public/5H.png"},
+    {id: '6', src: "public/5D.png"},
+    {id: '7', src: "public/6C.png"},
+    {id: '7', src: "public/6S.png"},
+    {id: '8', src: "public/7H.png"},
+    {id: '8', src: "public/7D.jpg"},
+    {id: '9', src: "public/8H.jpg"},
+    {id: '9', src: "public/8D.jpg"},
+    {id: '10', src: "public/9C.png"},
+    {id: '10', src: "public/9S.png"},
+    {id: '11', src: "public/10D.png"},
+    {id: '11', src: "public/10H.png"},
+    {id: '12', src: "public/QH.png"},
+    {id: '12', src: "public/QD.png"}
 ];
 
 TotalPairs = images.length / 2;
@@ -214,41 +215,41 @@ function Hard() {
     document.querySelector(".game_2").style.display = "none";
     document.querySelector(".game_3").style.display = "grid";
     document.getElementById("Start").style.display = "none";
-    document.getElementsByClassName("Extra")[0].style.display = "grid";
-    document.querySelectorAll(".game_3 .card").forEach(card => {
-    card.onclick = handleCardClick;
-});
-
+    hud.style.display = "flex";
 
 const images = [
     {id: '1', src: "public/2H.png"},
     {id: '1', src: "public/2D.png"},
-    {id: '2', src: "public/5H.png"},
-    {id: '2', src: "public/5D.png"},
-    {id: '3', src: "public/8H.jpg"},
-    {id: '3', src: "public/8D.jpg"},
-    {id: '4', src: "public/9C.png"},
-    {id: '4', src: "public/9S.png"},
-    {id: '5', src: "public/AC.jpg"},
-    {id: '5', src: "public/AS.png"},
-    {id: '6', src: "public/AD.jpg"},
-    {id: '6', src: "public/AH.jpg"},
-    {id: '7', src: "public/QH.png"},
-    {id: '7', src: "public/QD.png"},
-    {id: '8', src: "public/KC.png"},
-    {id: '8', src: "public/KS.png"},
-    {id: '9', src: "public/KD.png"},
-    {id: '9', src: "public/KH.jpg"},
-    {id: '10', src: "public/AH.jpg"},
-    {id: '10', src: "public/AS.png"},
-    {id: '11', src: "public/3C.png"},
-    {id: '11', src: "public/3S.png"},
-    {id: '12', src: "public/3H.png"},
-    {id: '12', src: "public/3D.png"},
-    {id: '13', src: "public/4H.png"},
-    {id: '13', src: "public/4D.png"},
-    {id: '14', src: "public/4C.png"},
-    {id: '14', src: "public/4S.png"}
+    {id: '2', src: "public/3C.png"},
+    {id: '2', src: "public/3S.png"},
+    {id: '3', src: "public/3H.png"},
+    {id: '3', src: "public/3D.png"},
+    {id: '4', src: "public/4H.png"},
+    {id: '4', src: "public/4D.png"},
+    {id: '5', src: "public/4C.png"},
+    {id: '5', src: "public/4S.png"},
+    {id: '6', src: "public/5H.png"},
+    {id: '6', src: "public/5D.png"},
+    {id: '7', src: "public/6C.png"},
+    {id: '7', src: "public/6S.png"},
+    {id: '8', src: "public/7H.png"},
+    {id: '8', src: "public/7D.jpg"},
+    {id: '9', src: "public/8H.jpg"},
+    {id: '9', src: "public/8D.jpg"},
+    {id: '10', src: "public/9C.png"},
+    {id: '10', src: "public/9S.png"},
+    {id: '11', src: "public/10D.png"},
+    {id: '11', src: "public/10H.png"},
+    {id: '12', src: "public/QH.png"},
+    {id: '12', src: "public/QD.png"},
+    {id: '13', src: "public/KC.png"},
+    {id: '13', src: "public/KS.png"},
+    {id: '14', src: "public/KD.png"},
+    {id: '14', src: "public/KH.jpg"},
+    {id: '15', src: "public/AH.jpg"},
+    {id: '15', src: "public/AD.jpg"},
+    {id: '16', src: "public/AC.jpg"},
+    {id: '16', src: "public/AS.png"}
     ];
 
 TotalPairs = images.length / 2;
@@ -273,7 +274,7 @@ contain.forEach((box, index) => {
 
 
 
-
+const overlay = document.getElementById("overlay");
 
 
 function endgame() {
@@ -281,6 +282,7 @@ function endgame() {
     document.getElementById("finalTime").innerHTML = time;
     document.getElementById("finalMoves").innerHTML = moves;
     clearInterval(timerInterval);
+    overlay.style.display = "block";
 }
 
 function Close() {
