@@ -112,6 +112,7 @@
         }
 
         @media screen and (max-width: 750px) {
+
             .game_1,
             .game_2,
             .game_3 {
@@ -136,10 +137,11 @@
                 height: 12vh;
                 width: 8vh;
             }
-            
+
         }
 
         @media screen and (max-width: 400px) {
+
             .game_1,
             .game_2,
             .game_3 {
@@ -161,7 +163,7 @@
                 width: 6vh;
             }
 
-            .Extra{
+            .Extra {
                 font-size: small;
             }
         }
